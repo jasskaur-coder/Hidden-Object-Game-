@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🔎 Hidden Object Game</title>
+  <link rel="shortcut icon" href="./assests/favicon.png" type="image/x-icon">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #1e1e1e;
+      color: #f5f5f5;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h1 {
+      margin: 20px 0;
+      font-size: 2rem;
+      color: #ffd700;
+      text-shadow: 2px 2px 4px #000;
+    }
+
+    #game-container {
+      display: flex;
+      gap: 20px;
+      max-width: 1200px;
+      width: 100%;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 20px;
+    }
+
+    canvas {
+      border: 3px solid #444;
+      border-radius: 8px;
+      background: #000;
+      cursor: crosshair;
+    }
+
+    #sidebar {
+      background: #2b2b2b;
+      padding: 15px;
+      border-radius: 8px;
+      width: 220px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+    }
+
+    #sidebar h3 {
+      margin-top: 0;
+      color: #00ffcc;
+      text-align: center;
+    }
+
+    #object-list {
+      list-style: none;
+      padding: 0;
+      margin: 10px 0;
+    }
+
+    #object-list li {
+      padding: 5px;
+      background: #3b3b3b;
+      margin: 5px 0;
+      border-radius: 4px;
+      transition: background 0.3s;
+    }
+
+    #object-list li.found {
+      text-decoration: line-through;
+      background: #228b22;
+      color: #fff;
+    }
+
+    p {
+      font-size: 1rem;
+      margin: 10px 0;
+    }
+
+    #timer {
+      color: #ff6347;
+      font-weight: bold;
+    }
+
+    #score {
+      color: #00ff7f;
+      font-weight: bold;
+    }
+
+    @media (max-width: 900px) {
+      #game-container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      #sidebar {
+        width: 90%;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>🔎 Hidden Object Game</h1>
+  <div id="game-container">
+    <canvas id="gameCanvas" width="800" height="600"></canvas>
+    <div id="sidebar">
+      <h3>Objects to Find</h3>
+      <ul id="object-list"></ul>
+      <p>⏳ Time: <span id="timer">60</span>s</p>
+      <p>⭐ Score: <span id="score">0</span></p>
+    </div>
+  </div>
+  <script src="script.js"></script> 
+</body>
+</html>
