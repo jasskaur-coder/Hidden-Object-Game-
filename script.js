@@ -50,7 +50,7 @@ function draw() {
     } else if (debugMode) {
       // Red outline for testing
       ctx.strokeStyle = "gray";
-      ctx.lineWidth = 1;
+      ctx.lineWidth = 0.5;
       ctx.strokeRect(obj.x, obj.y, obj.width, obj.height);
     }
   });
